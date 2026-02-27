@@ -138,50 +138,31 @@
     /* ── PROJECTS ── */
     .proj-card {
       background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-      margin-bottom: 24px; overflow: hidden; box-shadow: var(--shadow);
-      display: grid; grid-template-columns: 1fr 380px;
+      margin-bottom: 20px; overflow: hidden; box-shadow: var(--shadow);
       transition: box-shadow 0.25s, border-color 0.25s;
     }
     .proj-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
     .proj-card:last-child { margin-bottom: 0; }
-    .proj-content { padding: 36px; }
+    .proj-content { padding: 32px 36px; }
     .proj-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
     .proj-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 12px; line-height: 1.3; }
     .proj-desc { font-size: 14px; color: var(--sub); line-height: 1.85; margin-bottom: 20px; }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
     .tag { padding: 4px 10px; border-radius: 5px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-lt); border: 1px solid #c3d4f9; color: var(--accent); font-weight: 500; }
     .tag-g { background: #ecfdf5; border-color: #a7f3d0; color: #059669; }
-    .proj-link { color: var(--accent); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.2s; }
-    .proj-link:hover { gap: 10px; }
-
-    /* ── VIDEO PANEL ── */
-    .video-panel {
-      background: var(--bg); border-left: 1px solid var(--border);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 28px; gap: 16px;
-    }
-    .video-thumb {
-      width: 100%; aspect-ratio: 16/9; border-radius: 10px;
-      overflow: hidden; position: relative;
-      background: var(--border); border: 1px solid var(--border2);
-    }
-    .video-thumb iframe { width: 100%; height: 100%; border: none; }
-    .video-thumb .no-video {
-      width: 100%; height: 100%; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 10px;
-    }
-    .no-video .play-icon { font-size: 40px; opacity: 0.25; }
-    .no-video p { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; text-align: center; line-height: 1.7; }
-    .video-btn {
+    .proj-actions { display: flex; align-items: center; gap: 12px; }
+    .proj-link { color: var(--muted); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .proj-link:hover { color: var(--accent); }
+    /* Watch Demo button */
+    .demo-btn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 20px; border-radius: 7px; background: var(--accent); color: #fff;
+      padding: 10px 22px; border-radius: 7px;
+      background: var(--accent); color: #fff;
       font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.06em;
-      text-decoration: none; font-weight: 500; transition: all 0.2s;
-      width: 100%; justify-content: center;
+      text-decoration: none; font-weight: 600; transition: all 0.2s;
     }
-    .video-btn:hover { background: #1648c4; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(26,86,219,0.3); }
-    .video-btn.has-link { display: flex; }
-    .video-btn.no-link { background: var(--border2); color: var(--muted); pointer-events: none; display: flex; }
+    .demo-btn:hover { background: #1648c4; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(26,86,219,0.3); }
+    .demo-btn.inactive { background: var(--border); color: var(--muted); pointer-events: none; }
 
     /* ── EDUCATION ── */
     .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 28px; }
@@ -195,15 +176,6 @@
     .extra-icon { font-size: 36px; }
     .extra-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 4px; }
     .extra-sub { font-size: 13px; color: var(--sub); }
-
-    /* ── TIPS ── */
-    .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
-    .tip-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: all 0.2s; }
-    .tip-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .tip-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 28px; color: var(--border2); line-height: 1; margin-bottom: 10px; }
-    .tip-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 8px; }
-    .tip-body { font-size: 13px; color: var(--sub); line-height: 1.75; }
-    .tip-badge { display: inline-block; margin-top: 12px; padding: 3px 10px; background: var(--accent-lt); border: 1px solid #c3d4f9; border-radius: 4px; font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.07em; text-transform: uppercase; }
 
     /* ── CTA ── */
     .cta-wrap { background: var(--accent); }
@@ -239,8 +211,6 @@
       .stats-inner { grid-template-columns: repeat(2,1fr); gap: 24px; padding: 28px 20px; }
       .stat { border-right: none; padding: 0; text-align: left; }
       .section { padding: 60px 20px; }
-      .proj-card { grid-template-columns: 1fr; }
-      .video-panel { border-left: none; border-top: 1px solid var(--border); }
       .cta-inner { flex-direction: column; text-align: center; }
       footer { flex-direction: column; gap: 16px; text-align: center; }
     }
@@ -263,7 +233,7 @@
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
 <div class="hero">
   <div>
-    <div class="hero-tag">Available for Freelance ·  Egypt</div>
+    <div class="hero-tag">Available  ·  Egypt</div>
     <h1>AI Automation<br/><span>Engineer</span>.</h1>
     <p class="hero-desc">
       I design and deliver reliable, maintainable automation systems and AI-driven solutions —
@@ -271,7 +241,7 @@
       into customer journeys.
     </p>
     <div class="hero-contacts">
-      <a href="mailto:hamedmahamed00@gmail.com" class="cpill">✉ hamedmahamed00@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#187079757d7c75797079757d7c2828587f75797174367b7775" class="cpill">✉ <span class="__cf_email__" data-cfemail="660e070b03020b070e070b0302565626010b070f0a4805090b">[email&#160;protected]</span></a>
       <a href="https://wa.me/201159077093" target="_blank" class="cpill">💬 +20 115 907 7093</a>
       <a href="http://www.linkedin.com/in/hamed-mohamed-812b4b230" target="_blank" class="cpill">🔗 LinkedIn</a>
       <a href="https://www.upwork.com/freelancers/~017146fe881c329b56" target="_blank" class="cpill">💼 Upwork</a>
@@ -375,45 +345,18 @@
           <span class="tag">Email Automation</span>
           <span class="tag tag-g">LLM Integration</span>
         </div>
-        <!--
-          ┌─────────────────────────────────────────────────────────┐
-          │ VIDEO LINK: Paste your Loom or YouTube URL in the href  │
-          │ Example: href="https://www.loom.com/share/YOUR_ID_HERE" │
-          └─────────────────────────────────────────────────────────┘
-        
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="proj-link" id="link1">View Demo →</a>
-      </div>
-      <div class="video-panel">
-        <div class="video-thumb">
-          <!--
-            EMBED VIDEO: Replace YOUR_VIDEO_LINK_HERE with your Loom embed URL
-            Loom format:  https://www.loom.com/embed/YOUR_ID
-            YouTube:      https://www.youtube.com/embed/YOUR_ID
-          ---->
-          <iframe
-            id="iframe1"
-            src="YOUR_LOOM_OR_YOUTUBE_EMBED_URL_HERE"
-            allowfullscreen
-            style="display:none;"
-          ></iframe>
-          <div class="no-video" id="placeholder1">
-            <div class="play-icon">▶</div>
-            <p>Paste your Loom or YouTube<br/>embed URL in the code</p>
-          </div>
+        <div class="proj-actions">
+          <!-- Replace YOUR_VIDEO_LINK_HERE with your Loom or YouTube URL, then change class to "demo-btn" -->
+          <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="demo-btn inactive">▶ Watch Demo</a>
         </div>
-      <!--
-        
-          BUTTON: Change href to your full Loom/YouTube link (not embed)
-          Remove class "no-link" and add class "has-link" when you add a URL
-        -->
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="video-btn no-link" id="btn1">▶ Watch Demo</a>
       </div>
     </div>
+
     <!-- PROJECT 2 ─────────────────────────────────────────── -->
     <div class="proj-card">
       <div class="proj-content">
         <div class="proj-num">Project 02 — AI Sales</div>
-        <div class="proj-title">Smart Sales AI Agent </div>
+        <div class="proj-title">Smart Sales AI Agent (Retail)</div>
         <div class="proj-desc">A conversational AI bot that assists customers with product selection and real-time inventory tracking. Handles natural language queries, checks stock via Neon PostgreSQL, and responds via Telegram — simulating a knowledgeable sales employee available 24/7.</div>
         <div class="proj-tags">
           <span class="tag">n8n</span>
@@ -422,14 +365,9 @@
           <span class="tag">Telegram API</span>
           <span class="tag">AI Agent</span>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="proj-link">View Demo →</a>
-      </div>
-      <div class="video-panel">
-        <div class="video-thumb">
-          <iframe id="iframe2" src="YOUR_LOOM_OR_YOUTUBE_EMBED_URL_HERE" allowfullscreen style="display:none;"></iframe>
-          <div class="no-video" id="placeholder2"><div class="play-icon">▶</div><p>Paste your Loom or YouTube<br/>embed URL in the code</p></div>
+        <div class="proj-actions">
+          <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="demo-btn inactive">▶ Watch Demo</a>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="video-btn no-link">▶ Watch Demo</a>
       </div>
     </div>
 
@@ -446,14 +384,9 @@
           <span class="tag tag-g">Voice AI</span>
           <span class="tag">CRM Integration</span>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="proj-link">View Demo →</a>
-      </div>
-      <div class="video-panel">
-        <div class="video-thumb">
-          <iframe id="iframe3" src="YOUR_LOOM_OR_YOUTUBE_EMBED_URL_HERE" allowfullscreen style="display:none;"></iframe>
-          <div class="no-video" id="placeholder3"><div class="play-icon">▶</div><p>Paste your Loom or YouTube<br/>embed URL in the code</p></div>
+        <div class="proj-actions">
+          <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="demo-btn inactive">▶ Watch Demo</a>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="video-btn no-link">▶ Watch Demo</a>
       </div>
     </div>
 
@@ -470,14 +403,9 @@
           <span class="tag">SEO Automation</span>
           <span class="tag">Content AI</span>
         </div>
-        <a href="https://drive.google.com/file/d/1MJ1IknMbsSZEfsLE2W2QOhffVB7__nsR/view?usp=sharing" target="_blank" class="proj-link">View Demo →</a>
-      </div>
-      <div class="video-panel">
-        <div class="video-thumb">
-          <iframe id="iframe4" src="https://drive.google.com/file/d/1MJ1IknMbsSZEfsLE2W2QOhffVB7__nsR/view?usp=sharing" allowfullscreen style="display:none;"></iframe>
-          <div class="no-video" id="placeholder4"><div class="play-icon">▶</div><p>Paste your Loom or YouTube<br/>embed URL in the code</p></div>
+        <div class="proj-actions">
+          <a href="https://drive.google.com/file/d/1MJ1IknMbsSZEfsLE2W2QOhffVB7__nsR/view?usp=sharing" target="_blank" class="demo-btn inactive">▶ Watch Demo</a>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="video-btn no-link">▶ Watch Demo</a>
       </div>
     </div>
 
@@ -493,14 +421,9 @@
           <span class="tag tag-g">Blotato</span>
           <span class="tag">Social Automation</span>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="proj-link">View Demo →</a>
-      </div>
-      <div class="video-panel">
-        <div class="video-thumb">
-          <iframe id="iframe5" src="YOUR_LOOM_OR_YOUTUBE_EMBED_URL_HERE" allowfullscreen style="display:none;"></iframe>
-          <div class="no-video" id="placeholder5"><div class="play-icon">▶</div><p>Paste your Loom or YouTube<br/>embed URL in the code</p></div>
+        <div class="proj-actions">
+          <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="demo-btn inactive">▶ Watch Demo</a>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="video-btn no-link">▶ Watch Demo</a>
       </div>
     </div>
 
@@ -517,14 +440,9 @@
           <span class="tag">Intent Classification</span>
           <span class="tag">Support Automation</span>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="proj-link">View Demo →</a>
-      </div>
-      <div class="video-panel">
-        <div class="video-thumb">
-          <iframe id="iframe6" src="YOUR_LOOM_OR_YOUTUBE_EMBED_URL_HERE" allowfullscreen style="display:none;"></iframe>
-          <div class="no-video" id="placeholder6"><div class="play-icon">▶</div><p>Paste your Loom or YouTube<br/>embed URL in the code</p></div>
+        <div class="proj-actions">
+          <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="demo-btn inactive">▶ Watch Demo</a>
         </div>
-        <a href="YOUR_VIDEO_LINK_HERE" target="_blank" class="video-btn no-link">▶ Watch Demo</a>
       </div>
     </div>
 
@@ -594,51 +512,6 @@
   </div>
 </div>
 
-<!-- ══ RECOMMENDATIONS ══════════════════════════════════════════════ 
-<div class="section" id="tips">
-  <div class="section-head"><span class="section-tag">// 05 — Strengthen Your Profile</span><div class="section-rule"></div></div>
-  <h2>Recommended Next Steps</h2>
-  <p class="section-sub">The highest-impact actions to win more clients and build authority in AI automation.</p>
-  <div class="tips-grid">
-    <div class="tip-card">
-      <div class="tip-num">01</div>
-      <div class="tip-title">Add Loom demos to every project</div>
-      <div class="tip-body">A 2–3 min screencast showing your workflow live converts skeptical clients instantly. Replace the "YOUR_VIDEO_LINK_HERE" placeholders in this page with your actual Loom URLs.</div>
-      <span class="tip-badge">Highest Impact</span>
-    </div>
-    <div class="tip-card">
-      <div class="tip-num">02</div>
-      <div class="tip-title">Quantify your results</div>
-      <div class="tip-body">Replace "built automation" with "reduced publishing time from hours to minutes" (you already have this one). Add numbers to every project: time saved, accuracy %, tickets reduced.</div>
-      <span class="tip-badge">High Impact</span>
-    </div>
-    <div class="tip-card">
-      <div class="tip-num">03</div>
-      <div class="tip-title">Niche down on a vertical</div>
-      <div class="tip-body">You have MIT Supply Chain + automation experience — a rare combo. Position as "AI Automation for Supply Chain Teams" to command higher rates and face less competition.</div>
-      <span class="tip-badge">Positioning</span>
-    </div>
-    <div class="tip-card">
-      <div class="tip-num">04</div>
-      <div class="tip-title">Collect 5 Upwork reviews fast</div>
-      <div class="tip-body">The first 5 reviews unlock the algorithm. Take 1–2 smaller, quick jobs slightly below your usual rate just to build social proof. One review multiplies future hire probability.</div>
-      <span class="tip-badge">Trust Signal</span>
-    </div>
-    <div class="tip-card">
-      <div class="tip-num">05</div>
-      <div class="tip-title">Publish n8n workflow templates</div>
-      <div class="tip-body">Share anonymized workflow JSON on n8n's community forum or GitHub Gists. This builds domain authority, attracts inbound clients, and signals real expertise organically.</div>
-      <span class="tip-badge">Authority</span>
-    </div>
-    <div class="tip-card">
-      <div class="tip-num">06</div>
-      <div class="tip-title">Write a LinkedIn case study</div>
-      <div class="tip-body">Turn your AI Email Agent or Voice Receptionist into a LinkedIn article — problem, approach, result. Case studies attract direct leads that skip Upwork's 20% service fee entirely.</div>
-      <span class="tip-badge">Visibility</span>
-    </div>
-  </div>
-</div>
-
 <!-- ══ CTA ══════════════════════════════════════════════════════════ -->
 <div class="cta-wrap" id="contact">
   <div class="cta-inner">
@@ -657,7 +530,7 @@
 
 <!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
 <footer>
-  <div class="foot-left"> Hamed Mohamed · AI Automation Engineer · Egypt</div>
+  <div class="foot-left">© 2025 Hamed Mohamed · AI Automation Engineer ·  Egypt</div>
   <div class="foot-links">
     <a href="https://www.upwork.com/freelancers/~017146fe881c329b56" target="_blank">Upwork</a>
     <a href="http://www.linkedin.com/in/hamed-mohamed-812b4b230" target="_blank">LinkedIn</a>
@@ -668,32 +541,14 @@
 
 <script>
 /*
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  HOW TO ADD YOUR VIDEO DEMOS                                    ║
-  ║                                                                  ║
-  ║  For each project, find the line that says:                      ║
-  ║    src="YOUR_LOOM_OR_YOUTUBE_EMBED_URL_HERE"                     ║
-  ║                                                                  ║
-  ║  Replace it with your embed URL:                                 ║
-  ║    Loom:    https://www.loom.com/embed/YOUR_VIDEO_ID            ║
-  ║    YouTube: https://www.youtube.com/embed/YOUR_VIDEO_ID         ║
-  ║                                                                  ║
-  ║  Also replace href="YOUR_VIDEO_LINK_HERE" with the full link     ║
-  ║  and change class="video-btn no-link" to class="video-btn"       ║
-  ╚══════════════════════════════════════════════════════════════════╝
-*/
+  HOW TO ADD YOUR VIDEO DEMOS
+  ───────────────────────────
+  For each project, find:   class="demo-btn inactive"
+  Replace "inactive" with nothing (just "demo-btn")
+  And replace href="YOUR_VIDEO_LINK_HERE" with your real Loom or YouTube link.
 
-// Auto-detect which iframes have real URLs and show them
-document.addEventListener('DOMContentLoaded', () => {
-  for (let i = 1; i <= 6; i++) {
-    const iframe = document.getElementById('iframe' + i);
-    const placeholder = document.getElementById('placeholder' + i);
-    if (iframe && !iframe.src.includes('YOUR_')) {
-      iframe.style.display = 'block';
-      if (placeholder) placeholder.style.display = 'none';
-    }
-  }
-});
+  Example:
+    BEFORE: <a href="YOUR_VIDEO_LINK_HERE" class="demo-btn inactive">
+    AFTER:  <a href="https://www.loom.com/share/abc123" class="demo-btn">
+*/
 </script>
-</body>
-</html>
